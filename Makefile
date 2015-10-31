@@ -1,4 +1,4 @@
-SERVER_DIR="$(HOME)/csgo_ds2"
+SERVER_DIR="$(HOME)/csgo_ds"
 THIS_DIR=$(PWD)
 METAMOD_DIR=http://sourcemod.gameconnect.net/files/mmsource-1.10.6-linux.tar.gz
 SOURCEMOD_DIR=http://www.sourcemod.net/smdrop/1.7/sourcemod-1.7.3-git5272-linux.tar.gz
