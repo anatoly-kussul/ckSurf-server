@@ -1,11 +1,11 @@
 MAP=surf_kitsune
 MAPFILES=csgo/maps/*.bsp
 
-run:
+run: update
 	./srcds_run -game csgo -console -usercon +mapgroup mg_custom +map $(MAP) +game_type 0 +game_mode 0
 
 update:
-	steamcmd/steamcmd.sh +login anonymous +force_install_dir $$PWD +app_update 740 validate +quit
+	steamcmd/steamcmd.sh +login anonymous +force_install_dir $$PWD +app_update 740 +quit
 
 updatemaplist:
 	rm -f csgo/maplist.txt
