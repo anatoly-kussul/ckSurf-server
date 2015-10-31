@@ -1,7 +1,7 @@
 MAP=surf_kitsune
 MAPFILES=csgo/maps/*.bsp
 
-run: update
+run: update updatemaplist
 	./srcds_run -game csgo -console -usercon +mapgroup mg_custom +map $(MAP) +game_type 0 +game_mode 0
 
 update:
