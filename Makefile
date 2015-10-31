@@ -2,7 +2,7 @@ SERVER_DIR="$(HOME)/csgo_ds"
 THIS_DIR=$(PWD)
 METAMOD_URL=http://sourcemod.gameconnect.net/files/mmsource-1.10.6-linux.tar.gz
 SOURCEMOD_URL=http://www.sourcemod.net/smdrop/1.7/sourcemod-1.7.3-git5272-linux.tar.gz
-STRIPPER_URL=http://www.bailopan.net/stripper/files/stripper-1.2.2-linux.tar.gz
+STRIPPER_URL=http://www.bailopan.net/stripper/snapshots/1.2/stripper-1.2.2-git113-linux.tar.gz
 
 install:
 	test -e $(SERVER_DIR) || mkdir $(SERVER_DIR)
