@@ -1,8 +1,8 @@
 SERVER_DIR="$(HOME)/csgo_ds"
 THIS_DIR=$(PWD)
-METAMOD_DIR=http://sourcemod.gameconnect.net/files/mmsource-1.10.6-linux.tar.gz
-SOURCEMOD_DIR=http://www.sourcemod.net/smdrop/1.7/sourcemod-1.7.3-git5272-linux.tar.gz
-STRIPPER_DIR=http://www.bailopan.net/stripper/files/stripper-1.2.2-linux.tar.gz
+METAMOD_URL=http://sourcemod.gameconnect.net/files/mmsource-1.10.6-linux.tar.gz
+SOURCEMOD_URL=http://www.sourcemod.net/smdrop/1.7/sourcemod-1.7.3-git5272-linux.tar.gz
+STRIPPER_URL=http://www.bailopan.net/stripper/files/stripper-1.2.2-linux.tar.gz
 
 install:
 	test -e $(SERVER_DIR) || mkdir $(SERVER_DIR)
@@ -17,17 +17,17 @@ install:
 	$(SERVER_DIR)/steamcmd/steamcmd.sh +login anonymous +force_install_dir $(SERVER_DIR) +app_update 740 +quit
 
 	# download and install metamod
-	wget -O mmsource.tar.gz $(METAMOD_DIR) 
+	wget -O mmsource.tar.gz $(METAMOD_URL) 
 	tar -xvzf mmsource.tar.gz -C $(SERVER_DIR)/csgo
 	rm mmsource.tar.gz*
 
 	# download and install sourcemod
-	wget -O sourcemod.tar.gz $(SOURCEMOD_DIR)
+	wget -O sourcemod.tar.gz $(SOURCEMOD_URL)
 	tar -xvzf sourcemod.tar.gz -C $(SERVER_DIR)/csgo
 	rm sourcemod.tar.gz*
 
 	# download and install stripper
-	wget -O stripper.tar.gz $(STRIPPER_DIR)
+	wget -O stripper.tar.gz $(STRIPPER_URL)
 	tar -xvzf stripper.tar.gz -C $(SERVER_DIR)/csgo
 	rm stripper.tar.gz*
 
