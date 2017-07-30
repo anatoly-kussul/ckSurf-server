@@ -1,8 +1,9 @@
 SERVER_DIR="$(HOME)/csgo_ds"
 THIS_DIR=$(PWD)
-METAMOD_URL=http://sourcemod.gameconnect.net/files/mmsource-1.10.6-linux.tar.gz
-SOURCEMOD_URL=http://www.sourcemod.net/smdrop/1.7/sourcemod-1.7.3-git5272-linux.tar.gz
+METAMOD_URL=https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git959-linux.tar.gz
+SOURCEMOD_URL=https://sm.alliedmods.net/smdrop/1.8/sourcemod-1.8.0-git6016-linux.tar.gz
 STRIPPER_URL=http://www.bailopan.net/stripper/snapshots/1.2/stripper-1.2.2-git113-linux.tar.gz
+CKSURF_URL=https://forums.alliedmods.net/attachment.php?attachmentid=153717&d=1460462158
 
 install:
 	test -e $(SERVER_DIR) || mkdir $(SERVER_DIR)
@@ -31,11 +32,19 @@ install:
 	tar -xvzf stripper.tar.gz -C $(SERVER_DIR)/csgo
 	rm stripper.tar.gz*
 
-	# copy ckSurf plugin and configs
+	# download and install ckSurf
+	wget -O cksurf.zip $(CKSURF_URL)
+    unzip cksurf.zip -d cksurf/
+	cp cksurf/csgo/* $(SERVER_DIR)/csgo/
+    cp "cksurf/Optional files/Stripper configurations/*" $(SERVER_DIR)/csgo/addonds/stripper/
+	rm cksurf.zip
+    rm -rf cksurf/
+
+	# copy configs
 	\cp -r csgo/* $(SERVER_DIR)/csgo
         
 	# copy run and update script to your server dir
-	cp Makerun $(SERVER_DIR)/Makefile
+	cp server_commands.makefile $(SERVER_DIR)/Makefile
 
 	# activate some plugins
 	mv $(SERVER_DIR)/csgo/addons/sourcemod/plugins/disabled/mapchooser.smx $(SERVER_DIR)/csgo/addons/sourcemod/plugins
