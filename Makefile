@@ -40,7 +40,7 @@ install:
 	rm -rf cksurf/
 
 	# remove all default maps
-	rm $(SERVER_DIR)/csgo/maps/*
+	rm -rf $(SERVER_DIR)/csgo/maps/*
 
 	# copy configs and default map
 	\cp -r csgo $(SERVER_DIR)/csgo
