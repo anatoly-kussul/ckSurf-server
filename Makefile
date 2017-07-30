@@ -35,7 +35,7 @@ install:
 	wget -O cksurf.zip $(CKSURF_URL)
 	unzip cksurf.zip -d cksurf/
 	cp -r cksurf/csgo $(SERVER_DIR)/csgo
-	cp -r cksurf/Optional\ files/Stripper\ configurations/* $(SERVER_DIR)/csgo/addonds/stripper/
+	cp -r cksurf/Optional\ files/Stripper\ configurations/* $(SERVER_DIR)/csgo/addons/stripper/
 	rm cksurf.zip
 	rm -rf cksurf/
 
