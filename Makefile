@@ -1,5 +1,4 @@
 SERVER_DIR="$(HOME)/csgo_ds"
-THIS_DIR=$(PWD)
 METAMOD_URL="https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git959-linux.tar.gz"
 SOURCEMOD_URL="https://sm.alliedmods.net/smdrop/1.8/sourcemod-1.8.0-git6016-linux.tar.gz"
 STRIPPER_URL="http://www.bailopan.net/stripper/snapshots/1.2/stripper-1.2.2-git113-linux.tar.gz"
@@ -40,8 +39,11 @@ install:
 	rm cksurf.zip
 	rm -rf cksurf/
 
-	# copy configs
-	\cp -r csgo/* $(SERVER_DIR)/csgo
+	# remove all default maps
+	rm $(SERVER_DIR)/csgo/maps/*
+
+	# copy configs and default map
+	\cp -r csgo $(SERVER_DIR)/csgo
         
 	# copy run and update script to your server dir
 	cp server_commands.makefile $(SERVER_DIR)/Makefile
