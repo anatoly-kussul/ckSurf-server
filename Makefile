@@ -43,7 +43,7 @@ install:
 	rm -rf $(SERVER_DIR)/csgo/maps/*
 
 	# copy configs and default map
-	cp -r csgo $(SERVER_DIR)/csgo
+	cp -a csgo/* $(SERVER_DIR)/csgo/
         
 	# copy run and update script to your server dir
 	cp server_commands.makefile $(SERVER_DIR)/Makefile
