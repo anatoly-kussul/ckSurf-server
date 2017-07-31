@@ -2,7 +2,8 @@ SERVER_DIR="$(HOME)/csgo_ds"
 METAMOD_URL="https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git959-linux.tar.gz"
 SOURCEMOD_URL="https://sm.alliedmods.net/smdrop/1.8/sourcemod-1.8.0-git6016-linux.tar.gz"
 STRIPPER_URL="http://www.bailopan.net/stripper/snapshots/1.2/stripper-1.2.2-git113-linux.tar.gz"
-CKSURF_URL="https://forums.alliedmods.net/attachment.php?attachmentid=153717&d=1460462158"
+CKSURF_URL="https://github.com/nikooo777/ckSurf/archive/master.zip"
+STEAM_TOKEN=""
 
 install:
 	test -e $(SERVER_DIR) || mkdir $(SERVER_DIR)
@@ -37,13 +38,16 @@ install:
 	# download and install ckSurf
 	wget -O cksurf.zip $(CKSURF_URL)
 	unzip cksurf.zip -d cksurf/
-	cp -a cksurf/csgo/* $(SERVER_DIR)/csgo/
-	cp -a cksurf/Optional\ files/Stripper\ configurations/* $(SERVER_DIR)/csgo/addons/stripper/
+	cp -a cksurf/ckSurf-master/csgo/* $(SERVER_DIR)/csgo/
+	cp -a cksurf/ckSurf-master/Optional\ files/Stripper\ configurations/* $(SERVER_DIR)/csgo/addons/stripper/
 	rm cksurf.zip
 	rm -rf cksurf/
 
 	# copy configs and default map
 	cp -a csgo/* $(SERVER_DIR)/csgo/
+    
+    # add your steam token
+    echo "sv_setsteamaccount "$(STEAM_TOKEN) >> $(SERVER_DIR)/csgo/configs/autoexec.cfg
         
 	# copy run and update script to your server dir
 	cp server_commands.makefile $(SERVER_DIR)/Makefile
