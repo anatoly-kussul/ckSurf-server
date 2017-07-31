@@ -31,6 +31,9 @@ install:
 	tar -xvzf stripper.tar.gz -C $(SERVER_DIR)/csgo
 	rm stripper.tar.gz*
 
+	# remove all default maps
+	rm -rf $(SERVER_DIR)/csgo/maps/*
+
 	# download and install ckSurf
 	wget -O cksurf.zip $(CKSURF_URL)
 	unzip cksurf.zip -d cksurf/
@@ -38,9 +41,6 @@ install:
 	cp -r cksurf/Optional\ files/Stripper\ configurations/* $(SERVER_DIR)/csgo/addons/stripper/
 	rm cksurf.zip
 	rm -rf cksurf/
-
-	# remove all default maps
-	rm -rf $(SERVER_DIR)/csgo/maps/*
 
 	# copy configs and default map
 	cp -a csgo/* $(SERVER_DIR)/csgo/
