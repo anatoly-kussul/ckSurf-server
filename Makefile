@@ -47,7 +47,7 @@ install:
 	cp -a csgo/* $(SERVER_DIR)/csgo/
     
     # add your steam token
-    echo "sv_setsteamaccount "$(STEAM_TOKEN) >> $(SERVER_DIR)/csgo/configs/autoexec.cfg
+	echo "sv_setsteamaccount "$(STEAM_TOKEN) >> $(SERVER_DIR)/csgo/configs/autoexec.cfg
         
 	# copy run and update script to your server dir
 	cp server_commands.makefile $(SERVER_DIR)/Makefile
