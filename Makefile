@@ -1,7 +1,7 @@
 SERVER_DIR="$(HOME)/csgo_ds"
 METAMOD_URL="https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git959-linux.tar.gz"
 SOURCEMOD_URL="https://sm.alliedmods.net/smdrop/1.8/sourcemod-1.8.0-git6016-linux.tar.gz"
-STRIPPER_URL="http://www.bailopan.net/stripper/snapshots/1.2/stripper-1.2.2-git113-linux.tar.gz"
+STRIPPER_URL="http://www.bailopan.net/stripper/snapshots/1.2/stripper-1.2.2-git125-linux.tar.gz"
 CKSURF_URL="https://github.com/nikooo777/ckSurf/archive/master.zip"
 STEAM_TOKEN=""
 
